@@ -10,6 +10,13 @@ QuadTreeV::Engine::Engine()
 
 QuadTreeV::Engine::~Engine()
 {
+	//메인 레벨 제거
+	if (mainLevel)
+	{
+		delete mainLevel;
+		mainLevel = nullptr;
+	}
+
 }
 
 void QuadTreeV::Engine::Run()
@@ -102,13 +109,13 @@ void QuadTreeV::Engine::BeginPlay()
 
 void QuadTreeV::Engine::Tick(float deltaTime)
 {
-	/*std::cout << "DelteTime: " << deltaTime << " FPS: " << (1.0f / deltaTime) << "\n";
-
 	if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)
 	{
 		QuitEngine();
-	}*/
+	}
 
+	//레벨에 이벤트 흘리기
+	//예외처리
 	if (!mainLevel)
 	{
 		QuitEngine();

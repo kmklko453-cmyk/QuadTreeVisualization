@@ -48,3 +48,8 @@ void QuadTreeV::Level::Draw()
 		actor->Draw();
 	}
 }
+
+void QuadTreeV::Level::AddNewActor(Actor* newActor)
+{
+	actors.emplace_back(newActor);
+}

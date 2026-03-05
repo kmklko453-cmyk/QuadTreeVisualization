@@ -1,4 +1,5 @@
 #include "Engine/Engine.h"
+#include "Level/TestLevel.h"
 
 #include <iostream>
 #include <windows.h>
@@ -44,6 +45,7 @@ int main()
 {
 
     Engine engine;
+    engine.SetNewLevel(new TestLevel);
     engine.Run();
 
     //drawBox(0, 0, 40, 20);
