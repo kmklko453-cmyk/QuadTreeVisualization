@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36908.2 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QuadTreeVisualization", "QuadTreeVisualization\QuadTreeVisualization.vcxproj", "{49A0E69B-B81B-4BEB-9468-786C32C500CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49A0E69B-B81B-4BEB-9468-786C32C500CD}.Debug|x64.ActiveCfg = Debug|x64
+		{49A0E69B-B81B-4BEB-9468-786C32C500CD}.Debug|x64.Build.0 = Debug|x64
+		{49A0E69B-B81B-4BEB-9468-786C32C500CD}.Debug|x86.ActiveCfg = Debug|x64
+		{49A0E69B-B81B-4BEB-9468-786C32C500CD}.Release|x64.ActiveCfg = Release|x64
+		{49A0E69B-B81B-4BEB-9468-786C32C500CD}.Release|x64.Build.0 = Release|x64
+		{49A0E69B-B81B-4BEB-9468-786C32C500CD}.Release|x86.ActiveCfg = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8BBA1E1F-C48F-47D5-AA72-3D97FC8CBE5B}
+	EndGlobalSection
+EndGlobal
