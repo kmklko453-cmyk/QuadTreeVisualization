@@ -1,6 +1,8 @@
 #include "Engine.h"
+#include "Level/Level.h"
 #include <iostream>
 #include <Windows.h>
+
 
 QuadTreeV::Engine::Engine()
 {
@@ -51,6 +53,7 @@ void QuadTreeV::Engine::Run()
 			ProcessInput();
 
 			//프레임 처리
+			BeginPlay();
 			Tick(deltaTime);
 			Draw();
 
@@ -67,20 +70,65 @@ void QuadTreeV::Engine::QuitEngine()
 	isQuit = true;
 }
 
+void QuadTreeV::Engine::SetNewLevel(Level* newLevel)
+{
+	//기존 레벨 있는지 확인 
+	//있으면 기존 레벨 제거
+	if (mainLevel)
+	{
+		delete mainLevel;
+		mainLevel = nullptr;
+	}
+
+	//레벨 설정
+	mainLevel = newLevel;
+}
+
 void QuadTreeV::Engine::ProcessInput()
 {
 }
 
+void QuadTreeV::Engine::BeginPlay()
+{
+	//레벨이 있으면 이벤트 전달
+	if (!mainLevel)
+	{
+		std::cout << "mainLevel is empty.\n";
+		return;
+	}
+
+	mainLevel->BeginPlay();
+}
+
 void QuadTreeV::Engine::Tick(float deltaTime)
 {
-	std::cout << "DelteTime: " << deltaTime << " FPS: " << (1.0f / deltaTime) << "\n";
+	/*std::cout << "DelteTime: " << deltaTime << " FPS: " << (1.0f / deltaTime) << "\n";
 
 	if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)
 	{
 		QuitEngine();
+	}*/
+
+	if (!mainLevel)
+	{
+		QuitEngine();
+		std::cout << "Error: Engine::Tick(). mainLevel is empty\n";
+		return;
 	}
+
+	mainLevel->Tick(deltaTime);
 }
 
 void QuadTreeV::Engine::Draw()
 {
+	//레벨에 이벤트 흘리기
+	//예외처리
+	if (!mainLevel)
+	{
+		std::cout << "Error: Engine::Draw(). mainLevel is empty\n";
+		return;
+	}
+
+	mainLevel->Draw();
+
 }
