@@ -1,5 +1,6 @@
 #include "Engine/Engine.h"
 #include "Level/TestLevel.h"
+#include "math/Vector2.h"
 
 #include <iostream>
 #include <windows.h>

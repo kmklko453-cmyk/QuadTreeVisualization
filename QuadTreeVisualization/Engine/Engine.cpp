@@ -1,11 +1,14 @@
 #include "Engine.h"
 #include "Level/Level.h"
+#include "Core/Input.h"
+
 #include <iostream>
 #include <Windows.h>
 
 
 QuadTreeV::Engine::Engine()
 {
+	input = new Input();
 }
 
 QuadTreeV::Engine::~Engine()
@@ -15,6 +18,12 @@ QuadTreeV::Engine::~Engine()
 	{
 		delete mainLevel;
 		mainLevel = nullptr;
+	}
+
+	if (input)
+	{
+		delete input;
+		input = nullptr;
 	}
 
 }
@@ -57,7 +66,7 @@ void QuadTreeV::Engine::Run()
 		//프레임 고정 기법
 		if (deltaTime >= oneFrameTime)
 		{
-			ProcessInput();
+			input->ProcessInput();
 
 			//프레임 처리
 			BeginPlay();
@@ -91,9 +100,6 @@ void QuadTreeV::Engine::SetNewLevel(Level* newLevel)
 	mainLevel = newLevel;
 }
 
-void QuadTreeV::Engine::ProcessInput()
-{
-}
 
 void QuadTreeV::Engine::BeginPlay()
 {
