@@ -23,3 +23,8 @@ void QuadTreeV::Actor::Draw()
 {
 }
 
+void QuadTreeV::Actor::SetPosition(const Vector2& newPosition)
+{
+	potition = newPosition;
+}
+

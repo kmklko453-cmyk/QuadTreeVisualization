@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Math/Vector2.h"
+
 namespace QuadTreeV
 {
 	class Actor
@@ -12,8 +14,12 @@ namespace QuadTreeV
 		virtual void Tick(float deltaTime);
 		virtual void Draw();
 
+		void SetPosition(const Vector2& newPosition);
+
 		//Getter
 		inline bool HasBeganPlay() const { return hasBeganPlay; }
+		
+		//Todo 사용 안할 꺼 같음
 		bool IsActive() const
 		{
 			return isActive && !destroyRequested;
@@ -28,6 +34,10 @@ namespace QuadTreeV
 
 		//현재 프레임에 삭제 요청 받았는지 여부 
 		bool destroyRequested = false;
+
+	private:
+		//위치
+		Vector2 potition;
 	};
 
 }

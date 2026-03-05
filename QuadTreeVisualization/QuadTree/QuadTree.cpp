@@ -1,7 +1,7 @@
-#include "TestActor.h"
+#include "QuadTree.h"
 #include <iostream>
 
-void TestActor::BeginPlay()
+void QuadTree::BeginPlay()
 {
 	//ÀÌº¥Æ® Èå¸§¿¡ Å¾½Â¿ë
 	Actor::BeginPlay();
@@ -9,14 +9,14 @@ void TestActor::BeginPlay()
 	//std::cout << "TestActor::BeginPlay()\n";
 }
 
-void TestActor::Tick(float deltaTime)
+void QuadTree::Tick(float deltaTime)
 {
 	Actor::Tick(deltaTime);
 
 	//std::cout << "TestActor::Tick(). deltaTime: " << deltaTime << ", FPS: " << (1.0f / deltaTime) << "\n";
 }
 
-void TestActor::Draw()
+void QuadTree::Draw()
 { 
 	Actor::Draw();
 }
