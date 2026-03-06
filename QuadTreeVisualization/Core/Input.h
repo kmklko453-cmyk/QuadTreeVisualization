@@ -12,20 +12,22 @@ namespace QuadTreeV
 		~Input();
 
 	public:
-		//마우스 포지션 전달해주는 함수
-		Vector2 GetMousePosition();
-		
+		//콘솔 창안에서 마우스 좌표 구하는 함수
+		bool TryGetConsoleMousePosition(Vector2& outPos);
+
 		void ProcessInput();
 
 		// 전역적으로 접근하는 함수.
 		static Input& Get();
 
+		//Getter
+		const Vector2& GetMousePosition() const { return lastMousePosition; }
+
 	private:
 		static Input* instance;
 	
-		//마우스 이전 위치 저장 변수
-		Vector2 prevMousePos;
-		bool hasPrevMousePos = false;
+		//마우스 정보 저장용
+		Vector2 lastMousePosition{ 0, 0 };
 	};
 }
 

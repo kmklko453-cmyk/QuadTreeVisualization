@@ -154,14 +154,14 @@ namespace QuadTreeV
 	{
 		if (!instance)
 		{
-			MessageBoxA(
+			/*MessageBoxA(
 				nullptr,
 				"Renderer::Get() - instance is null",
 				"Error",
 				MB_OK
 			);
 
-			__debugbreak();
+			__debugbreak();*/
 		}
 
 		return *instance;

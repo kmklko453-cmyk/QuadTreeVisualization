@@ -27,7 +27,7 @@
     <ClCompile Include="Level\Level.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Actor\QuadTree.cpp">
+    <ClCompile Include="QuadTree\QuadTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Level\TestLevel.cpp">
@@ -48,6 +48,12 @@
     <ClCompile Include="Math\Color.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="QuadTree\Partition\Node.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="QuadTree\Partition\Bounds.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Engine.h">
@@ -59,7 +65,7 @@
     <ClInclude Include="Level\Level.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Actor\QuadTree.h">
+    <ClInclude Include="QuadTree\QuadTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Level\TestLevel.h">
@@ -81,6 +87,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Util\Util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="QuadTree\Partition\Node.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="QuadTree\Partition\Bounds.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

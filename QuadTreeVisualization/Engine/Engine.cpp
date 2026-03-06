@@ -1,6 +1,8 @@
 #include "Engine.h"
 #include "Level/Level.h"
-#include "Core/Input.h"`r`n#include "Renderer/Renderer.h"
+#include "Core/Input.h"
+#include "Renderer/Renderer.h"
+#include "Util/Util.h"
 
 #include <iostream>
 #include <Windows.h>
@@ -9,6 +11,8 @@
 QuadTreeV::Engine::Engine()
 {
 	input = new Input();
+	// 렌더러 객체 생성.
+	renderer = new Renderer(Vector2(setting.width, setting.height));
 }
 
 QuadTreeV::Engine::~Engine()
@@ -25,6 +29,9 @@ QuadTreeV::Engine::~Engine()
 		delete input;
 		input = nullptr;
 	}
+
+	// 렌더러 객체 제거.
+	SafeDelete(renderer);
 
 }
 
@@ -141,7 +148,10 @@ void QuadTreeV::Engine::Draw()
 		std::cout << "Error: Engine::Draw(). mainLevel is empty\n";
 		return;
 	}
-
+	// 레벨의 모든 액터가 렌더 데이터를 제출.
 	mainLevel->Draw();
+
+	// 렌더러에 그리기 명령 전달.
+	renderer->Draw();
 
 }

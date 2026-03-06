@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Actor.h"
+#include "Actor/Actor.h"
 
-class TestActor : public QuadTreeV::Actor
+class QuadTree : public QuadTreeV::Actor
 {
 protected:
 	virtual void BeginPlay() override;

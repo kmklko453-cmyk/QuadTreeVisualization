@@ -78,7 +78,7 @@ bool Node::SubDivide()
 bool Node::IsDivided()
 {
 	// 자식 하나만 확인
-	return TopLeft != nullptr;
+	return topLeft != nullptr;
 }
 
 NodeIndex Node::TestRegion(const Bounds& bounds)
