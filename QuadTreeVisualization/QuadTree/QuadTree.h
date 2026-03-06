@@ -1,13 +1,25 @@
 #pragma once
+#include "Partition/Node.h"
 
-#include "Actor/Actor.h"
-
-class QuadTree : public QuadTreeV::Actor
+class QuadTree
 {
-protected:
-	virtual void BeginPlay() override;
-	virtual void Tick(float deltaTime) override;
-	virtual void Draw() override;
+public:
+	QuadTree(const Bounds bounds);
+	~QuadTree();
+
+	//질의 함수
+	std::vector<Node*> Query(Node* queryNode);
+
+
+public:
+	//트리의 최대 허용깊이
+	static const int maxDepth = 5;
+
+	Node* GetNode() const { return root; };
+
+private:
+	//루트 노드
+	Node* root = nullptr;
 
 };
 

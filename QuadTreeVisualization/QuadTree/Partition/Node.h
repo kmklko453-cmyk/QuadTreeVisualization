@@ -22,6 +22,12 @@ public:
 	Node(const Bounds& bounds, int depth = 0);
 	~Node();
 
+	//삽입(Insert) 
+	void Insert(Node* node);
+
+	//질의 
+	void Query(const Bounds& bounds, std::vector<Node*>& possibleNode);
+
 	//정리 
 	void Clear();
 

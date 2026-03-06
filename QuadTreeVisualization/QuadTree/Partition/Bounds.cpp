@@ -1,6 +1,6 @@
 #include "Bounds.h"
 
-bool Bounds::Intersect(const Bounds& other) const
+bool Bounds::Intersects(const Bounds& other) const
 {
     //겹치지 않는 경우 먼저 판단
     

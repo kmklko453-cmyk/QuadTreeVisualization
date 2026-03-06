@@ -12,6 +12,98 @@ Node::~Node()
 	Clear();
 }
 
+void Node::Insert(Node* node)
+{
+	// 예외처리.
+		if (!node)
+		{
+			return;
+		}
+
+	// 겹치는 영역 확인.
+	NodeIndex result = TestRegion(node->GetBounds());
+
+	// 두 개 이상 영역에 겹치는 경우에는 현재 노드에 추가.
+	if (result == NodeIndex::Straddling)
+	{
+		points.emplace_back(node);
+	}
+	// 겹치지 않은 경우
+	// 경우의 수1: 1개의 영역에만 포함되는 경우.
+	else if (result != NodeIndex::OutOfArea)
+	{
+		// Subdivide 호출 시 MaxDepth에 도달하지 않으면 분할 진행.
+		if (SubDivide())
+		{
+			if (result == NodeIndex::TopLeft)
+			{
+				topLeft->Insert(node);
+			}
+			else if (result == NodeIndex::TopRight)
+			{
+				topRight->Insert(node);
+			}
+			else if (result == NodeIndex::BottomLeft)
+			{
+				bottomLeft->Insert(node);
+			}
+			else if (result == NodeIndex::BottomRight)
+			{
+				bottomRight->Insert(node);
+			}
+		}
+		// 분할 할 수 없는 경우(=>이미 최대 깊이에 도달한 경우).
+		else
+		{
+			points.emplace_back(node);
+		}
+	}
+
+	// 경우의 수2: 영역 밖에 있는 경우(OutOfArea).
+	//else
+	//{
+	//    // 아무 처리 안함 -> 노드 추가 안함.
+	//}
+}
+
+void Node::Query(const Bounds& bounds, std::vector<Node*>& possibleNode)
+{
+	//현재 노드를 추가하고 이후 과정 진행
+	possibleNode.emplace_back(this);
+
+	//분할 여부 확인 후 자손 검사
+	if (!IsDivided())
+	{
+		return;
+	}
+
+	//전달 받은 영역과 겹치는 4분면 목록 확인
+	std::vector<NodeIndex> quads = GetQuad(bounds);
+
+	//검사 진행
+	for (const NodeIndex& index : quads)
+	{
+		if (index == NodeIndex::TopLeft)
+		{
+			topLeft->Query(bounds, possibleNode);
+		}
+		else if (index == NodeIndex::TopRight)
+		{
+			topRight->Query(bounds, possibleNode);
+		}
+		else if (index == NodeIndex::BottomLeft)
+		{
+			bottomLeft->Query(bounds, possibleNode);
+		}
+		else if (index == NodeIndex::BottomRight)
+		{
+			bottomRight->Query(bounds, possibleNode);
+		}
+	}
+
+
+}
+
 void Node::Clear()
 {
 	//point에 추가 되는 노드는 외부(level)에서 관리함
@@ -159,3 +251,4 @@ void Node::ClearChildren()
 		SafeDelete(bottomRight);
 	}
 }
+

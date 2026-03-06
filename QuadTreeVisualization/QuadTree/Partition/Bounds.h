@@ -20,7 +20,7 @@ public:
 	int MaxY() const { return y + width; }
 
 	//겹침 판정 함수
-	bool Intersect(const Bounds& other) const;
+	bool Intersects(const Bounds& other) const;
 
 
 private:
