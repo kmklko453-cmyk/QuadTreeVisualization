@@ -82,7 +82,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Actor\Actor.cpp" />
     <ClCompile Include="QuadTree\Partition\Bounds.cpp" />
     <ClCompile Include="QuadTree\Partition\Node.cpp" />
     <ClCompile Include="QuadTree\QuadTree.cpp" />
@@ -97,7 +96,6 @@
     <ClCompile Include="Renderer\ScreenBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Actor\Actor.h" />
     <ClInclude Include="QuadTree\Partition\Bounds.h" />
     <ClInclude Include="QuadTree\Partition\Node.h" />
     <ClInclude Include="QuadTree\QuadTree.h" />

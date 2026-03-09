@@ -18,12 +18,7 @@ namespace QuadTreeV
 
 		//Getter
 		inline bool HasBeganPlay() const { return hasBeganPlay; }
-		
-		//Todo 사용 안할 꺼 같음
-		bool IsActive() const
-		{
-			return isActive && !destroyRequested;
-		}
+
 
 	protected:
 		//이미 BeginPlay 이벤트를 받았는지 여부

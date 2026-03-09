@@ -16,7 +16,7 @@ namespace QuadTreeV
 			float framerate = 30.0f;
 
 			// 화면 너비.
-			int width = 500;
+			int width = 1000;
 
 			// 화면 높이.
 			int height = 500;

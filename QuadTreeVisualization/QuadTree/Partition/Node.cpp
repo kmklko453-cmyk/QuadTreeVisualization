@@ -127,7 +127,7 @@ void Node::Clear()
 bool Node::SubDivide()
 {
 	//최대 깊이 도달 했는지 확인
-	if (depth == 5)
+	if (depth == 7)
 	{
 		return false;
 	}
@@ -164,7 +164,7 @@ bool Node::SubDivide()
 
 
 
-	return false;
+	return true;
 }
 
 bool Node::IsDivided()
@@ -202,16 +202,16 @@ std::vector<NodeIndex> Node::GetQuad(const Bounds& bounds)
 	//영역 계산에 필요한 함수
 	int x = bounds.X();
 	int y = bounds.Y();
-	int halfWidth = this->bounds.Width() / 2;
-	int halfHeight = this->bounds.Height() / 2;
-	int centerY = halfWidth;
-	int centerX = halfHeight;
+	int halfWidth = this->bounds.X() + this->bounds.Width() / 2;
+	int halfHeight = this->bounds.Y() + this->bounds.Height() / 2;
+	int centerY = halfHeight;
+	int centerX = halfWidth;
 
 	//왼쪽 영역이랑 겹치는지 확인
 	bool left = bounds.X() < centerX && bounds.MaxX() >= x;
 
 	//오른쪽 영역이랑 겹치는지 확인
-	bool right = bounds.MaxX() >= centerX && bounds.X() >= x;
+	bool right = bounds.MaxX() >= centerX && bounds.X() < this->bounds.MaxX();
 
 	//위쪽이랑 영역이 겹치는지 확인
 	bool top = bounds.Y() < centerY && bounds.MaxY() >= y;

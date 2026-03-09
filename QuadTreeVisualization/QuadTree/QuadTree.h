@@ -13,7 +13,7 @@ public:
 
 public:
 	//트리의 최대 허용깊이
-	static const int maxDepth = 5;
+	static const int maxDepth = 3;
 
 	Node* GetNode() const { return root; };
 

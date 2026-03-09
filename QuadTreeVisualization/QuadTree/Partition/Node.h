@@ -41,13 +41,13 @@ public:
 	inline Node* BottomLeft() const { return bottomLeft; }
 	inline Node* BottomRight() const { return bottomRight; }
 
+	bool IsDivided();
 
 private:
 	//4분할 함수
 	bool SubDivide();
 
 	//영역이 분할 됐는지 여부 확인 함수
-	bool IsDivided();
 
 	//전달된 영역과 겹치는 영역을 반환하는 함수
 	NodeIndex TestRegion(const Bounds& bounds);

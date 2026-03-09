@@ -17,7 +17,7 @@ public:
 	int Height() const { return height; }
 	
 	int MaxX() const { return x + width; }
-	int MaxY() const { return y + width; }
+	int MaxY() const { return y + height; }
 
 	//겹침 판정 함수
 	bool Intersects(const Bounds& other) const;

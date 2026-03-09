@@ -1,5 +1,6 @@
 #pragma once
 #include "Level.h"
+#include "QuadTree/Partition/Node.h"
 
 class TestLevel : public QuadTreeV::Level
 {
@@ -10,9 +11,10 @@ public:
 	virtual void Tick(float deltaTime);
 	virtual void Draw();
 
-	void ShowVector2(int x, int heigh);
-	void DrawBox(int x, int y, int width, int height);
-	void DrawLine(int x, int y, int width, int height);
+	void ShowVector2(int x, int height);
+	void DrawBox(const Bounds bounds);
+	void DrawLine(const Bounds bounds);
+	bool DrawLineRecursive(Node* node);
 	
 
 private:
