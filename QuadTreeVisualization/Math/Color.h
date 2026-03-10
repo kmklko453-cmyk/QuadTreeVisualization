@@ -10,7 +10,7 @@ namespace QuadTreeV
 	{
 		Black = 0,
 		Blue = FOREGROUND_BLUE,
-		Green = FOREGROUND_GREEN,
+		Green = BACKGROUND_GREEN,
 		Red = FOREGROUND_RED,
 		White = Blue | Green | Red,
 	};

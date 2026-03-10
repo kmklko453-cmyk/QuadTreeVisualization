@@ -13,7 +13,7 @@ namespace QuadTreeV
 
 	public:
 		//콘솔 창안에서 마우스 좌표 구하는 함수
-		bool TryGetConsoleMousePosition(Vector2& outPos);
+		bool TryGetConsoleMousePosition();
 
 		void ProcessInput();
 
@@ -21,13 +21,13 @@ namespace QuadTreeV
 		static Input& Get();
 
 		//Getter
-		const Vector2& GetMousePosition() const { return lastMousePosition; }
+		const Vector2& GetMousePosition() const { return MousePosition; }
 
 	private:
 		static Input* instance;
 	
 		//마우스 정보 저장용
-		Vector2 lastMousePosition{ 0, 0 };
+		Vector2 MousePosition{ 0, 0 };
 	};
 }
 

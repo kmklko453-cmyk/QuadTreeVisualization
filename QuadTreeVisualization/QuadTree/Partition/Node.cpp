@@ -148,15 +148,15 @@ bool Node::SubDivide()
 		);
 
 		topRight = new Node(
-			Bounds(x + halfWidth, y, halfWidth, halfHeight), depth + 1
+			Bounds(x + halfWidth, y, bounds.Width() - halfWidth, halfHeight), depth + 1
 		);
 
 		bottomLeft = new Node(
-			Bounds(x, y + halfHeight, halfWidth, halfHeight), depth + 1
+			Bounds(x, y + halfHeight, halfWidth, bounds.Height() - halfHeight), depth + 1
 		);
 
 		bottomRight = new Node(
-			Bounds(x + halfWidth, y + halfHeight, halfWidth, halfHeight),
+			Bounds(x + halfWidth, y + halfHeight, bounds.Width() - halfWidth, bounds.Height() - halfHeight),
 			depth + 1
 		);
 

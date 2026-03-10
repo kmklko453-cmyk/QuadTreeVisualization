@@ -4,6 +4,7 @@
 class QuadTree
 {
 public:
+	QuadTree();
 	QuadTree(const Bounds bounds);
 	~QuadTree();
 

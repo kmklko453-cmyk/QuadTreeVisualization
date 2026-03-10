@@ -88,7 +88,7 @@
     <ClCompile Include="Core\Input.cpp" />
     <ClCompile Include="Engine\Engine.cpp" />
     <ClCompile Include="Level\Level.cpp" />
-    <ClCompile Include="Level\TestLevel.cpp" />
+    <ClCompile Include="Level\QuadTreeLevel.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Math\Color.cpp" />
     <ClCompile Include="Math\Vector2.cpp" />
@@ -102,7 +102,7 @@
     <ClInclude Include="Core\Input.h" />
     <ClInclude Include="Engine\Engine.h" />
     <ClInclude Include="Level\Level.h" />
-    <ClInclude Include="Level\TestLevel.h" />
+    <ClInclude Include="Level\QuadTreeLevel.h" />
     <ClInclude Include="Math\Color.h" />
     <ClInclude Include="Math\Vector2.h" />
     <ClInclude Include="Renderer\Renderer.h" />

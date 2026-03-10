@@ -2,6 +2,10 @@
 #include "Util/Util.h"
 #include <iostream>
 
+QuadTree::QuadTree()
+{
+}
+
 QuadTree::QuadTree(const Bounds bounds)
 {
 	//루트 노드 생성

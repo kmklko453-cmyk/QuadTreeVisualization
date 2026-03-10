@@ -27,7 +27,7 @@
     <ClCompile Include="QuadTree\QuadTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Level\TestLevel.cpp">
+    <ClCompile Include="Level\QuadTreeLevel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Core\Input.cpp">
@@ -62,7 +62,7 @@
     <ClInclude Include="QuadTree\QuadTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Level\TestLevel.h">
+    <ClInclude Include="Level\QuadTreeLevel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Core\Input.h">

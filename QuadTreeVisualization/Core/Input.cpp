@@ -16,7 +16,7 @@ namespace QuadTreeV
 	{
 	}
 
-	bool Input::TryGetConsoleMousePosition(Vector2& outPos)
+	bool Input::TryGetConsoleMousePosition()
 	{
 		//처음 한번 초기화가 되도록 static 선언 
 		static bool initialized = false;
@@ -89,29 +89,18 @@ namespace QuadTreeV
 		//record.MouseEvent를 mouse로 부르기
 		const MOUSE_EVENT_RECORD& mouse = record.Event.MouseEvent;
 
-		//마우스가 이동 했을 때만 처리
-		if (mouse.dwEventFlags != MOUSE_MOVED)
-		{
-			return false;
-		}
-
 		//마우스 좌표저장
 		Vector2 next;
 		next.x = static_cast<int>(mouse.dwMousePosition.X);
 		next.y = static_cast<int>(mouse.dwMousePosition.Y);
 
-		lastMousePosition = next;
-		outPos = next;
+		MousePosition = next;
 		return true;
 	}
 
 	void Input::ProcessInput()
 	{
-		Vector2 mousePos;
-
-		TryGetConsoleMousePosition(mousePos);
-		
-	
+		TryGetConsoleMousePosition();
 	}
 
 
